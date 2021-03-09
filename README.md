@@ -41,10 +41,9 @@
 
 [Запустить код][notebook]
 
+**Подробный вариант**
 
 ```python
-# Подробный вариант
-
 n = 9 ** 18 + 3 ** 54 - 9
 s = 0
 
@@ -56,13 +55,9 @@ while n != 0:
 print(s)
 ```
 
-    34
-
-
+**Короткий вариант**
 
 ```python
-# Короткий вариант
-
 n = 9 ** 18 + 3 ** 54 - 9
 s = 0
 
@@ -72,9 +67,6 @@ while n:
 
 print(s)
 ```
-
-    34
-
 
 **Общий вид**
 
@@ -105,9 +97,6 @@ while n:
 print(s)
 ```
 
-    14
-
-
 **Задача&nbsp;3.** Значение выражения 216<sup>5</sup> + 6<sup>3</sup>&nbsp;&mdash; 1&nbsp;&mdash; X записали в&nbsp;системе счисления с&nbsp;основание 6, при этом в&nbsp;записи оказалось 12) цифр 5. При каком минимальном положительном значении X это возможно?
 
 [Запустить код][notebook]
@@ -127,12 +116,9 @@ for x in range(1000):
         break
 ```
 
-    259
-
-
 ### ЕГЭ номер 24. Обработка символьных строк
 
-<center><img src="https://github.com/zinkinru/webinar-10032021/blob/master/src/img/files.png" width="200"></center>
+<img src="https://github.com/zinkinru/webinar-10032021/blob/master/src/img/files.png" width="200">
 
 
 ```python
@@ -147,10 +133,9 @@ os.chdir("src/txt/")
 
 [Запустить код][notebook]
 
+**Классическое решение**
 
 ```python
-# Классическое решение
-
 file  = open('24.txt').read()
 
 max_count = count = 0
@@ -169,13 +154,9 @@ for char in file:
 print(max_count)
 ```
 
-    13
-
-
+**Упрощенный вариант**
 
 ```python
-# Упрощенный вариант
-
 file  = open('24.txt').read()
 
 max_count = count = 0
@@ -192,13 +173,9 @@ for char in file:
 print(max_count)
 ```
 
-    13
-
-
+**Нестандартный подход**
 
 ```python
-# Нестандартный подход
-
 file  = open('24.txt').read()
 
 chain = ""
@@ -211,16 +188,13 @@ while chain in file:
 print(count - 1)
 ```
 
-    13
-
-
 **Задача&nbsp;5.** Текстовый файл состоит не&nbsp;более чем из 10<sup>6</sup> символов X, Y и Z. Определите длину самой длинной последовательности, состоящей из&nbsp;символов «X».
 
 [Запустить код][notebook]
 
+**Алгоритм из задачи 4**
 
 ```python
-# Алгоритм из задачи 4
 file  = open('24.txt').read()
 
 chain = ""
@@ -231,27 +205,20 @@ while chain in file:
 print(len(chain) - 1)
 ```
 
-    19
-
-
+**Нестандартный подход**
 
 ```python
-# Нестандартный подход
 string = open('24.txt').read().replace("Y", " ").replace("Z", " ").split()
 print(len(max(string, key=len)))
 ```
-
-    19
-
 
 **Задача&nbsp;6.** Текстовый файл состоит не&nbsp;более чем из 10<sup>6</sup> символов X, Y и Z. Определите максимальное количество идущих подряд символов, среди которых каждые два соседних различны.
 
 [Запустить код][notebook]
 
+**Нестандартный подход**
 
 ```python
-# Нестандартный подход
-
 string = open('24.txt').read()
 pairs = ('XX', "X X"), ('YY', "Y Y"), ('ZZ', "Z Z")
 
@@ -267,13 +234,9 @@ while 'ZZ' in string:
 print( len(max(string.split(), key=len)) )
 ```
 
-    35
-
-
+**Упрощенный вариант**
 
 ```python
-# Упрощенный вариант
-
 string = open('24.txt').read()
 pairs = ('XX', "X X"), ('YY', "Y Y"), ('ZZ', "Z Z")
 
@@ -283,17 +246,13 @@ for a,b in pairs:
 print( len(max(string.split(), key=len)) )
 ```
 
-    35
-
-
 **Задача&nbsp;7.** Текстовый файл содержит только заглавные буквы латинского алфавита ABC...Z. Определите символ, который чаще всего встречается в&nbsp;файле сразу после буквы «A».
 
 [Запустить код][notebook]
 
+**Нестандартный подход**
 
 ```python
-# Нестандартный подход
-
 string = open('24.A.txt').read()
 
 max_len = 0
@@ -309,13 +268,9 @@ for char in alph:
 print(max_len, max_len_char)
 ```
 
-    1555 G
-
-
+**Упрощенный вариант**
 
 ```python
-# Упрощенный вариант
-
 string = open('24.A.txt').read()
 
 alph = "QAZWSXEDCRFVTGBYHNUJMIKOLP"
@@ -324,13 +279,9 @@ counter = [string.count("A" + char) for char in alph]
 print( *max(zip(counter, alph)) )
 ```
 
-    1555 G
-
-
 **Задача&nbsp;8.** Текстовый файл содержит только заглавные буквы латинского алфавита ABC...Z. Определите символ, который чаще всего встречается в&nbsp;файле после двух одиннаковых символов «A».
 
 [Запустить код][notebook]
-
 
 ```python
 string = open('24.A.txt').read()
@@ -340,8 +291,6 @@ counter = [string.count("AA" + char) for char in alph]
 
 print( *max(zip(counter, alph)) )
 ```
-
-    70 O
 
 
 ### Контакты
